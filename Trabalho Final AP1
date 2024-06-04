@@ -1,0 +1,1848 @@
+Algoritmo "gigaa"
+Var
+   tab1,tab4:vetor[1..1,1..8]de caractere
+   tab2:vetor[1..1,1..13]de caractere
+   tab3:vetor[1..1,1..11]de caractere
+   tab5:vetor[1..1,1..10]de caractere
+   tab6:vetor[1..1,1..7]de caractere
+   nome1,nome2,nome3,nome4,nome5,nome6:vetor[2..60,1..1]de caractere
+   mafal1,mafal2,mafal3,mafal4,mafal5,mafal6:vetor[2..60,2..3]de inteiro
+   dados1,dados4:vetor[2..60,4..7]de real
+   dados2:vetor[2..60,4..12] de real
+   dados3:vetor[2..60,4..10] de real
+   dados5:vetor[2..60,4..9] de real
+   dados6:vetor[2..60,4..6] de real
+   aprov1,aprov4:vetor[2..60,8..8]de caractere
+   aprov2:vetor[2..60,13..13]de caractere
+   aprov3:vetor[2..60,11..11]de caractere
+   aprov5:vetor[2..60,10..10]de caractere
+   aprov6:vetor[2..60,7..7]de caractere
+   prof:vetor[1..5]de inteiro
+   materia:vetor[1..6]de caractere
+   a,b,c,d,x,y,edit,p,k,nd,matAl,la,m,i:inteiro
+Inicio
+   //login professores
+   prof[1] <- 01234 //ana paula
+   prof[2] <- 02345 //marcelo
+   prof[3] <- 03456 //lucyjane
+   prof[4] <- 04567 //josé
+   prof[5] <- 05678 //ana corolina
+   //materias
+   materia[1]<-"Algotimo e Progamação 1"
+   materia[2]<-"Computador e Sociedade"
+   materia[3]<-"Introdução a Ciência Computação"
+   materia[4]<-"Cálculo 1"
+   materia[5]<-"Lógica para Ciência da Computação"
+   materia[6]<-"Empreendedorismo"
+   //nome alunos
+   nome1[2,1]<- "Adailton          "
+   nome1[3,1]<- "Aisla             "
+   nome1[4,1]<- "Alano             "
+   nome1[5,1]<- "Ana Luísa         "
+   nome1[6,1]<- "Antônio           "
+   nome1[7,1]<- "Carlos            "
+   nome1[8,1]<- "Claiton           "
+   nome1[9,1]<- "Clara             "
+   nome1[10,1]<-"Felipe Ferreira   "
+   nome1[11,1]<-"Felipe Franco     "
+   nome1[12,1]<-"Felipe Moraes     "
+   nome1[13,1]<-"Floro             "
+   nome1[14,1]<-"Gabriel Assis     "
+   nome1[15,1]<-"Gabriel Cardoso   "
+   nome1[16,1]<-"Gabriela          "
+   nome1[17,1]<-"Guilherme         "
+   nome1[18,1]<-"Gustavo Cortez    "
+   nome1[19,1]<-"Gustavo Fé        "
+   nome1[20,1]<-"Gustavo Henrique  "
+   nome1[21,1]<-"Gustavo Rockenbach"
+   nome1[22,1]<-"Henrique          "
+   nome1[23,1]<-"Igor              "
+   nome1[24,1]<-"João de Lima      "
+   nome1[25,1]<-"João Lucas        "
+   nome1[26,1]<-"João Paulo        "
+   nome1[27,1]<-"João Paulo        "
+   nome1[28,1]<-"João Pedro        "
+   nome1[29,1]<-"João Victor       "
+   nome1[30,1]<-"João Vitor        "
+   nome1[31,1]<-"Joaquin           "
+   nome1[32,1]<-"Kaike             "
+   nome1[33,1]<-"Karla             "
+   nome1[34,1]<-"Kellen            "
+   nome1[35,1]<-"Lana              "
+   nome1[36,1]<-"Lázaro            "
+   nome1[37,1]<-"Leonardo          "
+   nome1[38,1]<-"Lucas             "
+   nome1[39,1]<-"Lynkoln           "
+   nome1[40,1]<-"Lysian            "
+   nome1[41,1]<-"Marco Túlio       "
+   nome1[42,1]<-"Maria Eduarda     "
+   nome1[43,1]<-"Mateus Campos     "
+   nome1[44,1]<-"Mateus Stadler    "
+   nome1[45,1]<-"Matheus Oliveria  "
+   nome1[46,1]<-"Matheus Prado     "
+   nome1[47,1]<-"Micaele           "
+   nome1[48,1]<-"Pablo             "
+   nome1[49,1]<-"Pedro Almeida     "
+   nome1[50,1]<-"Pedro Vinícius    "
+   nome1[51,1]<-"Phillipi          "
+   nome1[52,1]<-"Rafael            "
+   nome1[53,1]<-"Renato            "
+   nome1[54,1]<-"Rian              "
+   nome1[55,1]<-"Samuel            "
+   nome1[56,1]<-"Sergimar          "
+   nome1[57,1]<-"Tatielly          "
+   nome1[58,1]<-"Victor            "
+   nome1[59,1]<-"Vinícius          "
+   nome1[60,1]<-"Vitor             "
+
+   nome2[2,1]<- "Adailton          "
+   nome2[3,1]<- "Aisla             "
+   nome2[4,1]<- "Alano             "
+   nome2[5,1]<- "Ana Luísa         "
+   nome2[6,1]<- "Antônio           "
+   nome2[7,1]<- "Carlos            "
+   nome2[8,1]<- "Claiton           "
+   nome2[9,1]<- "Clara             "
+   nome2[10,1]<-"Felipe Ferreira   "
+   nome2[11,1]<-"Felipe Franco     "
+   nome2[12,1]<-"Felipe Moraes     "
+   nome2[13,1]<-"Floro             "
+   nome2[14,1]<-"Gabriel Assis     "
+   nome2[15,1]<-"Gabriel Cardoso   "
+   nome2[16,1]<-"Gabriela          "
+   nome2[17,1]<-"Guilherme         "
+   nome2[18,1]<-"Gustavo Cortez    "
+   nome2[19,1]<-"Gustavo Fé        "
+   nome2[20,1]<-"Gustavo Henrique  "
+   nome2[21,1]<-"Gustavo Rockenbach"
+   nome2[22,1]<-"Henrique          "
+   nome2[23,1]<-"Igor              "
+   nome2[24,1]<-"João de Lima      "
+   nome2[25,1]<-"João Lucas        "
+   nome2[26,1]<-"João Paulo        "
+   nome2[27,1]<-"João Paulo        "
+   nome2[28,1]<-"João Pedro        "
+   nome2[29,1]<-"João Victor       "
+   nome2[30,1]<-"João Vitor        "
+   nome2[31,1]<-"Joaquin           "
+   nome2[32,1]<-"Kaike             "
+   nome2[33,1]<-"Karla             "
+   nome2[34,1]<-"Kellen            "
+   nome2[35,1]<-"Lana              "
+   nome2[36,1]<-"Lázaro            "
+   nome2[37,1]<-"Leonardo          "
+   nome2[38,1]<-"Lucas             "
+   nome2[39,1]<-"Lynkoln           "
+   nome2[40,1]<-"Lysian            "
+   nome2[41,1]<-"Marco Túlio       "
+   nome2[42,1]<-"Maria Eduarda     "
+   nome2[43,1]<-"Mateus Campos     "
+   nome2[44,1]<-"Mateus Stadler    "
+   nome2[45,1]<-"Matheus Oliveria  "
+   nome2[46,1]<-"Matheus Prado     "
+   nome2[47,1]<-"Micaele           "
+   nome2[48,1]<-"Pablo             "
+   nome2[49,1]<-"Pedro Almeida     "
+   nome2[50,1]<-"Pedro Vinícius    "
+   nome2[51,1]<-"Phillipi          "
+   nome2[52,1]<-"Rafael            "
+   nome2[53,1]<-"Renato            "
+   nome2[54,1]<-"Rian              "
+   nome2[55,1]<-"Samuel            "
+   nome2[56,1]<-"Sergimar          "
+   nome2[57,1]<-"Tatielly          "
+   nome2[58,1]<-"Victor            "
+   nome2[59,1]<-"Vinícius          "
+   nome2[60,1]<-"Vitor             "
+
+
+   nome3[2,1]<- "Adailton          "
+   nome3[3,1]<- "Aisla             "
+   nome3[4,1]<- "Alano             "
+   nome3[5,1]<- "Ana Luísa         "
+   nome3[6,1]<- "Antônio           "
+   nome3[7,1]<- "Carlos            "
+   nome3[8,1]<- "Claiton           "
+   nome3[9,1]<- "Clara             "
+   nome3[10,1]<-"Felipe Ferreira   "
+   nome3[11,1]<-"Felipe Franco     "
+   nome3[12,1]<-"Felipe Moraes     "
+   nome3[13,1]<-"Floro             "
+   nome3[14,1]<-"Gabriel Assis     "
+   nome3[15,1]<-"Gabriel Cardoso   "
+   nome3[16,1]<-"Gabriela          "
+   nome3[17,1]<-"Guilherme         "
+   nome3[18,1]<-"Gustavo Cortez    "
+   nome3[19,1]<-"Gustavo Fé        "
+   nome3[20,1]<-"Gustavo Henrique  "
+   nome3[21,1]<-"Gustavo Rockenbach"
+   nome3[22,1]<-"Henrique          "
+   nome3[23,1]<-"Igor              "
+   nome3[24,1]<-"João de Lima      "
+   nome3[25,1]<-"João Lucas        "
+   nome3[26,1]<-"João Paulo        "
+   nome3[27,1]<-"João Paulo        "
+   nome3[28,1]<-"João Pedro        "
+   nome3[29,1]<-"João Victor       "
+   nome3[30,1]<-"João Vitor        "
+   nome3[31,1]<-"Joaquin           "
+   nome3[32,1]<-"Kaike             "
+   nome3[33,1]<-"Karla             "
+   nome3[34,1]<-"Kellen            "
+   nome3[35,1]<-"Lana              "
+   nome3[36,1]<-"Lázaro            "
+   nome3[37,1]<-"Leonardo          "
+   nome3[38,1]<-"Lucas             "
+   nome3[39,1]<-"Lynkoln           "
+   nome3[40,1]<-"Lysian            "
+   nome3[41,1]<-"Marco Túlio       "
+   nome3[42,1]<-"Maria Eduarda     "
+   nome3[43,1]<-"Mateus Campos     "
+   nome3[44,1]<-"Mateus Stadler    "
+   nome3[45,1]<-"Matheus Oliveria  "
+   nome3[46,1]<-"Matheus Prado     "
+   nome3[47,1]<-"Micaele           "
+   nome3[48,1]<-"Pablo             "
+   nome3[49,1]<-"Pedro Almeida     "
+   nome3[50,1]<-"Pedro Vinícius    "
+   nome3[51,1]<-"Phillipi          "
+   nome3[52,1]<-"Rafael            "
+   nome3[53,1]<-"Renato            "
+   nome3[54,1]<-"Rian              "
+   nome3[55,1]<-"Samuel            "
+   nome3[56,1]<-"Sergimar          "
+   nome3[57,1]<-"Tatielly          "
+   nome3[58,1]<-"Victor            "
+   nome3[59,1]<-"Vinícius          "
+   nome3[60,1]<-"Vitor             "
+
+   nome4[2,1]<- "Adailton          "
+   nome4[3,1]<- "Aisla             "
+   nome4[4,1]<- "Alano             "
+   nome4[5,1]<- "Ana Luísa         "
+   nome4[6,1]<- "Antônio           "
+   nome4[7,1]<- "Carlos            "
+   nome4[8,1]<- "Claiton           "
+   nome4[9,1]<- "Clara             "
+   nome4[10,1]<- "Felipe Ferreira   "
+   nome4[11,1]<- "Felipe Franco     "
+   nome4[12,1]<- "Felipe Moraes     "
+   nome4[13,1]<- "Floro             "
+   nome4[14,1]<- "Gabriel Assis     "
+   nome4[15,1]<- "Gabriel Cardoso   "
+   nome4[16,1]<- "Gabriela          "
+   nome4[17,1]<- "Guilherme         "
+   nome4[18,1]<- "Gustavo Cortez    "
+   nome4[19,1]<- "Gustavo Fé        "
+   nome4[20,1]<- "Gustavo Henrique  "
+   nome4[21,1]<- "Gustavo Rockenbach"
+   nome4[22,1]<- "Henrique          "
+   nome4[23,1]<- "Igor              "
+   nome4[24,1]<- "João de Lima      "
+   nome4[25,1]<- "João Lucas        "
+   nome4[26,1]<- "João Paulo        "
+   nome4[27,1]<- "João Paulo        "
+   nome4[28,1]<- "João Pedro        "
+   nome4[29,1]<- "João Victor       "
+   nome4[30,1]<- "João Vitor        "
+   nome4[31,1]<- "Joaquin           "
+   nome4[32,1]<- "Kaike             "
+   nome4[33,1]<- "Karla             "
+   nome4[34,1]<- "Kellen            "
+   nome4[35,1]<- "Lana              "
+   nome4[36,1]<- "Lázaro            "
+   nome4[37,1]<- "Leonardo          "
+   nome4[38,1]<- "Lucas             "
+   nome4[39,1]<- "Lynkoln           "
+   nome4[40,1]<- "Lysian            "
+   nome4[41,1]<- "Marco Túlio       "
+   nome4[42,1]<- "Maria Eduarda     "
+   nome4[43,1]<- "Mateus Campos     "
+   nome4[44,1]<- "Mateus Stadler    "
+   nome4[45,1]<- "Matheus Oliveria  "
+   nome4[46,1]<- "Matheus Prado     "
+   nome4[47,1]<- "Micaele           "
+   nome4[48,1]<- "Pablo             "
+   nome4[49,1]<- "Pedro Almeida     "
+   nome4[50,1]<- "Pedro Vinícius    "
+   nome4[51,1]<- "Phillipi          "
+   nome4[52,1]<- "Rafael            "
+   nome4[53,1]<- "Renato            "
+   nome4[54,1]<- "Rian              "
+   nome4[55,1]<- "Samuel            "
+   nome4[56,1]<- "Sergimar          "
+   nome4[57,1]<- "Tatielly          "
+   nome4[58,1]<- "Victor            "
+   nome4[59,1]<- "Vinícius          "
+   nome4[60,1]<- "Vitor             "
+
+
+   nome5[2,1]<- "Adailton          "
+   nome5[3,1]<- "Aisla             "
+   nome5[4,1]<- "Alano             "
+   nome5[5,1]<- "Ana Luísa         "
+   nome5[6,1]<- "Antônio           "
+   nome5[7,1]<- "Carlos            "
+   nome5[8,1]<- "Claiton           "
+   nome5[9,1]<- "Clara             "
+   nome5[10,1]<- "Felipe Ferreira   "
+   nome5[11,1]<- "Felipe Franco     "
+   nome5[12,1]<- "Felipe Moraes     "
+   nome5[13,1]<- "Floro             "
+   nome5[14,1]<- "Gabriel Assis     "
+   nome5[15,1]<- "Gabriel Cardoso   "
+   nome5[16,1]<- "Gabriela          "
+   nome5[17,1]<- "Guilherme         "
+   nome5[18,1]<- "Gustavo Cortez    "
+   nome5[19,1]<- "Gustavo Fé        "
+   nome5[20,1]<- "Gustavo Henrique  "
+   nome5[21,1]<- "Gustavo Rockenbach"
+   nome5[22,1]<- "Henrique          "
+   nome5[23,1]<- "Igor              "
+   nome5[24,1]<- "João de Lima      "
+   nome5[25,1]<- "João Lucas        "
+   nome5[26,1]<- "João Paulo        "
+   nome5[27,1]<- "João Paulo        "
+   nome5[28,1]<- "João Pedro        "
+   nome5[29,1]<- "João Victor       "
+   nome5[30,1]<- "João Vitor        "
+   nome5[31,1]<- "Joaquin           "
+   nome5[32,1]<- "Kaike             "
+   nome5[33,1]<- "Karla             "
+   nome5[34,1]<- "Kellen            "
+   nome5[35,1]<- "Lana              "
+   nome5[36,1]<- "Lázaro            "
+   nome5[37,1]<- "Leonardo          "
+   nome5[38,1]<- "Lucas             "
+   nome5[39,1]<- "Lynkoln           "
+   nome5[40,1]<- "Lysian            "
+   nome5[41,1]<- "Marco Túlio       "
+   nome5[42,1]<- "Maria Eduarda     "
+   nome5[43,1]<- "Mateus Campos     "
+   nome5[44,1]<- "Mateus Stadler    "
+   nome5[45,1]<- "Matheus Oliveria  "
+   nome5[46,1]<- "Matheus Prado     "
+   nome5[47,1]<- "Micaele           "
+   nome5[48,1]<- "Pablo             "
+   nome5[49,1]<- "Pedro Almeida     "
+   nome5[50,1]<- "Pedro Vinícius    "
+   nome5[51,1]<- "Phillipi          "
+   nome5[52,1]<- "Rafael            "
+   nome5[53,1]<- "Renato            "
+   nome5[54,1]<- "Rian              "
+   nome5[55,1]<- "Samuel            "
+   nome5[56,1]<- "Sergimar          "
+   nome5[57,1]<- "Tatielly          "
+   nome5[58,1]<- "Victor            "
+   nome5[59,1]<- "Vinícius          "
+   nome5[60,1]<- "Vitor             "
+
+   nome6[2,1]<- "Adailton          "
+   nome6[3,1]<- "Aisla             "
+   nome6[4,1]<- "Alano             "
+   nome6[5,1]<- "Ana Luísa         "
+   nome6[6,1]<- "Antônio           "
+   nome6[7,1]<- "Carlos            "
+   nome6[8,1]<- "Claiton           "
+   nome6[9,1]<- "Clara             "
+   nome6[10,1]<- "Felipe Ferreira   "
+   nome6[11,1]<- "Felipe Franco     "
+   nome6[12,1]<- "Felipe Moraes     "
+   nome6[13,1]<- "Floro             "
+   nome6[14,1]<- "Gabriel Assis     "
+   nome6[15,1]<- "Gabriel Cardoso   "
+   nome6[16,1]<- "Gabriela          "
+   nome6[17,1]<- "Guilherme         "
+   nome6[18,1]<- "Gustavo Cortez    "
+   nome6[19,1]<- "Gustavo Fé        "
+   nome6[20,1]<- "Gustavo Henrique  "
+   nome6[21,1]<- "Gustavo Rockenbach"
+   nome6[22,1]<- "Henrique          "
+   nome6[23,1]<- "Igor              "
+   nome6[24,1]<- "João de Lima      "
+   nome6[25,1]<- "João Lucas        "
+   nome6[26,1]<- "João Paulo        "
+   nome6[27,1]<- "João Paulo        "
+   nome6[28,1]<- "João Pedro        "
+   nome6[29,1]<- "João Victor       "
+   nome6[30,1]<- "João Vitor        "
+   nome6[31,1]<- "Joaquin           "
+   nome6[32,1]<- "Kaike             "
+   nome6[33,1]<- "Karla             "
+   nome6[34,1]<- "Kellen            "
+   nome6[35,1]<- "Lana              "
+   nome6[36,1]<- "Lázaro            "
+   nome6[37,1]<- "Leonardo          "
+   nome6[38,1]<- "Lucas             "
+   nome6[39,1]<- "Lynkoln           "
+   nome6[40,1]<- "Lysian            "
+   nome6[41,1]<- "Marco Túlio       "
+   nome6[42,1]<- "Maria Eduarda     "
+   nome6[43,1]<- "Mateus Campos     "
+   nome6[44,1]<- "Mateus Stadler    "
+   nome6[45,1]<- "Matheus Oliveria  "
+   nome6[46,1]<- "Matheus Prado     "
+   nome6[47,1]<- "Micaele           "
+   nome6[48,1]<- "Pablo             "
+   nome6[49,1]<- "Pedro Almeida     "
+   nome6[50,1]<- "Pedro Vinícius    "
+   nome6[51,1]<- "Phillipi          "
+   nome6[52,1]<- "Rafael            "
+   nome6[53,1]<- "Renato            "
+   nome6[54,1]<- "Rian              "
+   nome6[55,1]<- "Samuel            "
+   nome6[56,1]<- "Sergimar          "
+   nome6[57,1]<- "Tatielly          "
+   nome6[58,1]<- "Victor            "
+   nome6[59,1]<- "Vinícius          "
+   nome6[60,1]<- "Vitor             "
+
+   //número de mátricula alunos
+   mafal1[2,2]<-202300742
+   mafal1[3,2]<-202300083
+   mafal1[4,2]<-202300084
+   mafal1[5,2]<-202300085
+   mafal1[6,2]<-202300086
+   mafal1[7,2]<-202300693
+   mafal1[8,2]<-202300087
+   mafal1[9,2]<-202300088
+   mafal1[10,2]<-202300090
+   mafal1[11,2]<-202300091
+   mafal1[12,2]<-202300093
+   mafal1[13,2]<-202300094
+   mafal1[14,2]<-202300095
+   mafal1[15,2]<-202200143
+   mafal1[16,2]<-202300096
+   mafal1[17,2]<-202012994
+   mafal1[18,2]<-202300097
+   mafal1[19,2]<-202300098
+   mafal1[20,2]<-202300099
+   mafal1[21,2]<-202300100
+   mafal1[22,2]<-202300912
+   mafal1[23,2]<-202300101
+   mafal1[24,2]<-202300102
+   mafal1[25,2]<-202300103
+   mafal1[26,2]<-202300104
+   mafal1[27,2]<-202300105
+   mafal1[28,2]<-202300741
+   mafal1[29,2]<-202300106
+   mafal1[30,2]<-202300107
+   mafal1[31,2]<-202300913
+   mafal1[32,2]<-202300914
+   mafal1[33,2]<-202300108
+   mafal1[34,2]<-202300109
+   mafal1[35,2]<-202300110
+   mafal1[36,2]<-202109777
+   mafal1[37,2]<-202013006
+   mafal1[38,2]<-202300111
+   mafal1[39,2]<-202300112
+   mafal1[40,2]<-202300113
+   mafal1[41,2]<-202300739
+   mafal1[42,2]<-202300114
+   mafal1[43,2]<-202300115
+   mafal1[44,2]<-202200164
+   mafal1[45,2]<-202300116
+   mafal1[46,2]<-202300117
+   mafal1[47,2]<-202300118
+   mafal1[48,2]<-202300120
+   mafal1[49,2]<-202300915
+   mafal1[50,2]<-202300121
+   mafal1[51,2]<-202300122
+   mafal1[52,2]<-202300916
+   mafal1[53,2]<-202201160
+   mafal1[54,2]<-202300123
+   mafal1[55,2]<-202300124
+   mafal1[56,2]<-202300743
+   mafal1[57,2]<-202300125
+   mafal1[58,2]<-202300127
+   mafal1[59,2]<-202300863
+   mafal1[60,2]<-202300128
+
+   mafal2[2,2]<-202300742
+   mafal2[3,2]<-202300083
+   mafal2[4,2]<-202300084
+   mafal2[5,2]<-202300085
+   mafal2[6,2]<-202300086
+   mafal2[7,2]<-202300693
+   mafal2[8,2]<-202300087
+   mafal2[9,2]<-202300088
+   mafal2[10,2]<-202300090
+   mafal2[11,2]<-202300091
+   mafal2[12,2]<-202300093
+   mafal2[13,2]<-202300094
+   mafal2[14,2]<-202300095
+   mafal2[15,2]<-202200143
+   mafal2[16,2]<-202300096
+   mafal2[17,2]<-202012994
+   mafal2[18,2]<-202300097
+   mafal2[19,2]<-202300098
+   mafal2[20,2]<-202300099
+   mafal2[21,2]<-202300100
+   mafal2[22,2]<-202300912
+   mafal2[23,2]<-202300101
+   mafal2[24,2]<-202300102
+   mafal2[25,2]<-202300103
+   mafal2[26,2]<-202300104
+   mafal2[27,2]<-202300105
+   mafal2[28,2]<-202300741
+   mafal2[29,2]<-202300106
+   mafal2[30,2]<-202300107
+   mafal2[31,2]<-202300913
+   mafal2[32,2]<-202300914
+   mafal2[33,2]<-202300108
+   mafal2[34,2]<-202300109
+   mafal2[35,2]<-202300110
+   mafal2[36,2]<-202109777
+   mafal2[37,2]<-202013006
+   mafal2[38,2]<-202300111
+   mafal2[39,2]<-202300112
+   mafal2[40,2]<-202300113
+   mafal2[41,2]<-202300739
+   mafal2[42,2]<-202300114
+   mafal2[43,2]<-202300115
+   mafal2[44,2]<-202200164
+   mafal2[45,2]<-202300116
+   mafal2[46,2]<-202300117
+   mafal2[47,2]<-202300118
+   mafal2[48,2]<-202300120
+   mafal2[49,2]<-202300915
+   mafal2[50,2]<-202300121
+   mafal2[51,2]<-202300122
+   mafal2[52,2]<-202300916
+   mafal2[53,2]<-202201160
+   mafal2[54,2]<-202300123
+   mafal2[55,2]<-202300124
+   mafal2[56,2]<-202300743
+   mafal2[57,2]<-202300125
+   mafal2[58,2]<-202300127
+   mafal2[59,2]<-202300863
+   mafal2[60,2]<-202300128
+
+   mafal3[2,2]<-202300742
+   mafal3[3,2]<-202300083
+   mafal3[4,2]<-202300084
+   mafal3[5,2]<-202300085
+   mafal3[6,2]<-202300086
+   mafal3[7,2]<-202300693
+   mafal3[8,2]<-202300087
+   mafal3[9,2]<-202300088
+   mafal3[10,2]<-202300090
+   mafal3[11,2]<-202300091
+   mafal3[12,2]<-202300093
+   mafal3[13,2]<-202300094
+   mafal3[14,2]<-202300095
+   mafal3[15,2]<-202200143
+   mafal3[16,2]<-202300096
+   mafal3[17,2]<-202012994
+   mafal3[18,2]<-202300097
+   mafal3[19,2]<-202300098
+   mafal3[20,2]<-202300099
+   mafal3[21,2]<-202300100
+   mafal3[22,2]<-202300912
+   mafal3[23,2]<-202300101
+   mafal3[24,2]<-202300102
+   mafal3[25,2]<-202300103
+   mafal3[26,2]<-202300104
+   mafal3[27,2]<-202300105
+   mafal3[28,2]<-202300741
+   mafal3[29,2]<-202300106
+   mafal3[30,2]<-202300107
+   mafal3[31,2]<-202300913
+   mafal3[32,2]<-202300914
+   mafal3[33,2]<-202300108
+   mafal3[34,2]<-202300109
+   mafal3[35,2]<-202300110
+   mafal3[36,2]<-202109777
+   mafal3[37,2]<-202013006
+   mafal3[38,2]<-202300111
+   mafal3[39,2]<-202300112
+   mafal3[40,2]<-202300113
+   mafal3[41,2]<-202300739
+   mafal3[42,2]<-202300114
+   mafal3[43,2]<-202300115
+   mafal3[44,2]<-202200164
+   mafal3[45,2]<-202300116
+   mafal3[46,2]<-202300117
+   mafal3[47,2]<-202300118
+   mafal3[48,2]<-202300120
+   mafal3[49,2]<-202300915
+   mafal3[50,2]<-202300121
+   mafal3[51,2]<-202300122
+   mafal3[52,2]<-202300916
+   mafal3[53,2]<-202201160
+   mafal3[54,2]<-202300123
+   mafal3[55,2]<-202300124
+   mafal3[56,2]<-202300743
+   mafal3[57,2]<-202300125
+   mafal3[58,2]<-202300127
+   mafal3[59,2]<-202300863
+   mafal3[60,2]<-202300128
+
+   mafal4[2,2]<-202300742
+   mafal4[3,2]<-202300083
+   mafal4[4,2]<-202300084
+   mafal4[5,2]<-202300085
+   mafal4[6,2]<-202300086
+   mafal4[7,2]<-202300693
+   mafal4[8,2]<-202300087
+   mafal4[9,2]<-202300088
+   mafal4[10,2]<-202300090
+   mafal4[11,2]<-202300091
+   mafal4[12,2]<-202300093
+   mafal4[13,2]<-202300094
+   mafal4[14,2]<-202300095
+   mafal4[15,2]<-202200143
+   mafal4[16,2]<-202300096
+   mafal4[17,2]<-202012994
+   mafal4[18,2]<-202300097
+   mafal4[19,2]<-202300098
+   mafal4[20,2]<-202300099
+   mafal4[21,2]<-202300100
+   mafal4[22,2]<-202300912
+   mafal4[23,2]<-202300101
+   mafal4[24,2]<-202300102
+   mafal4[25,2]<-202300103
+   mafal4[26,2]<-202300104
+   mafal4[27,2]<-202300105
+   mafal4[28,2]<-202300741
+   mafal4[29,2]<-202300106
+   mafal4[30,2]<-202300107
+   mafal4[31,2]<-202300913
+   mafal4[32,2]<-202300914
+   mafal4[33,2]<-202300108
+   mafal4[34,2]<-202300109
+   mafal4[35,2]<-202300110
+   mafal4[36,2]<-202109777
+   mafal4[37,2]<-202013006
+   mafal4[38,2]<-202300111
+   mafal4[39,2]<-202300112
+   mafal4[40,2]<-202300113
+   mafal4[41,2]<-202300739
+   mafal4[42,2]<-202300114
+   mafal4[43,2]<-202300115
+   mafal4[44,2]<-202200164
+   mafal4[45,2]<-202300116
+   mafal4[46,2]<-202300117
+   mafal4[47,2]<-202300118
+   mafal4[48,2]<-202300120
+   mafal4[49,2]<-202300915
+   mafal4[50,2]<-202300121
+   mafal4[51,2]<-202300122
+   mafal4[52,2]<-202300916
+   mafal4[53,2]<-202201160
+   mafal4[54,2]<-202300123
+   mafal4[55,2]<-202300124
+   mafal4[56,2]<-202300743
+   mafal4[57,2]<-202300125
+   mafal4[58,2]<-202300127
+   mafal4[59,2]<-202300863
+   mafal4[60,2]<-202300128
+
+   mafal5[2,2]<-202300742
+   mafal5[3,2]<-202300083
+   mafal5[4,2]<-202300084
+   mafal5[5,2]<-202300085
+   mafal5[6,2]<-202300086
+   mafal5[7,2]<-202300693
+   mafal5[8,2]<-202300087
+   mafal5[9,2]<-202300088
+   mafal5[10,2]<-202300090
+   mafal5[11,2]<-202300091
+   mafal5[12,2]<-202300093
+   mafal5[13,2]<-202300094
+   mafal5[14,2]<-202300095
+   mafal5[15,2]<-202200143
+   mafal5[16,2]<-202300096
+   mafal5[17,2]<-202012994
+   mafal5[18,2]<-202300097
+   mafal5[19,2]<-202300098
+   mafal5[20,2]<-202300099
+   mafal5[21,2]<-202300100
+   mafal5[22,2]<-202300912
+   mafal5[23,2]<-202300101
+   mafal5[24,2]<-202300102
+   mafal5[25,2]<-202300103
+   mafal5[26,2]<-202300104
+   mafal5[27,2]<-202300105
+   mafal5[28,2]<-202300741
+   mafal5[29,2]<-202300106
+   mafal5[30,2]<-202300107
+   mafal5[31,2]<-202300913
+   mafal5[32,2]<-202300914
+   mafal5[33,2]<-202300108
+   mafal5[34,2]<-202300109
+   mafal5[35,2]<-202300110
+   mafal5[36,2]<-202109777
+   mafal5[37,2]<-202013006
+   mafal5[38,2]<-202300111
+   mafal5[39,2]<-202300112
+   mafal5[40,2]<-202300113
+   mafal5[41,2]<-202300739
+   mafal5[42,2]<-202300114
+   mafal5[43,2]<-202300115
+   mafal5[44,2]<-202200164
+   mafal5[45,2]<-202300116
+   mafal5[46,2]<-202300117
+   mafal5[47,2]<-202300118
+   mafal5[48,2]<-202300120
+   mafal5[49,2]<-202300915
+   mafal5[50,2]<-202300121
+   mafal5[51,2]<-202300122
+   mafal5[52,2]<-202300916
+   mafal5[53,2]<-202201160
+   mafal5[54,2]<-202300123
+   mafal5[55,2]<-202300124
+   mafal5[56,2]<-202300743
+   mafal5[57,2]<-202300125
+   mafal5[58,2]<-202300127
+   mafal5[59,2]<-202300863
+   mafal5[60,2]<-202300128
+
+   mafal6[2,2]<-202300742
+   mafal6[3,2]<-202300083
+   mafal6[4,2]<-202300084
+   mafal6[5,2]<-202300085
+   mafal6[6,2]<-202300086
+   mafal6[7,2]<-202300693
+   mafal6[8,2]<-202300087
+   mafal6[9,2]<-202300088
+   mafal6[10,2]<-202300090
+   mafal6[11,2]<-202300091
+   mafal6[12,2]<-202300093
+   mafal6[13,2]<-202300094
+   mafal6[14,2]<-202300095
+   mafal6[15,2]<-202200143
+   mafal6[16,2]<-202300096
+   mafal6[17,2]<-202012994
+   mafal6[18,2]<-202300097
+   mafal6[19,2]<-202300098
+   mafal6[20,2]<-202300099
+   mafal6[21,2]<-202300100
+   mafal6[22,2]<-202300912
+   mafal6[23,2]<-202300101
+   mafal6[24,2]<-202300102
+   mafal6[25,2]<-202300103
+   mafal6[26,2]<-202300104
+   mafal6[27,2]<-202300105
+   mafal6[28,2]<-202300741
+   mafal6[29,2]<-202300106
+   mafal6[30,2]<-202300107
+   mafal6[31,2]<-202300913
+   mafal6[32,2]<-202300914
+   mafal6[33,2]<-202300108
+   mafal6[34,2]<-202300109
+   mafal6[35,2]<-202300110
+   mafal6[36,2]<-202109777
+   mafal6[37,2]<-202013006
+   mafal6[38,2]<-202300111
+   mafal6[39,2]<-202300112
+   mafal6[40,2]<-202300113
+   mafal6[41,2]<-202300739
+   mafal6[42,2]<-202300114
+   mafal6[43,2]<-202300115
+   mafal6[44,2]<-202200164
+   mafal6[45,2]<-202300116
+   mafal6[46,2]<-202300117
+   mafal6[47,2]<-202300118
+   mafal6[48,2]<-202300120
+   mafal6[49,2]<-202300915
+   mafal6[50,2]<-202300121
+   mafal6[51,2]<-202300122
+   mafal6[52,2]<-202300916
+   mafal6[53,2]<-202201160
+   mafal6[54,2]<-202300123
+   mafal6[55,2]<-202300124
+   mafal6[56,2]<-202300743
+   mafal6[57,2]<-202300125
+   mafal6[58,2]<-202300127
+   mafal6[59,2]<-202300863
+   mafal6[60,2]<-202300128
+
+   tab1[1,1]<-" Nome             "
+   tab1[1,2]<-" Matrícula"
+   tab1[1,3]<-" Falta"
+   tab1[1,4]<-" Nota1"
+   tab1[1,5]<-" Nota2"
+   tab1[1,6]<-" Trabalho"
+   tab1[1,7]<-" Média"
+   tab1[1,8]<-" Situação"
+   
+   tab2[1,1]<-" Nome             "
+   tab2[1,2]<-" Matrícula"
+   tab2[1,3]<-" Falta"
+   tab2[1,4]<-" Tarefa1"
+   tab2[1,5]<-" Tarefa2"
+   tab2[1,6]<-" Tarefa3"
+   tab2[1,7]<-" Avaliação1"
+   tab2[1,8]<-" Tarefa5"
+   tab2[1,9]<-" Tarefa6"
+   tab2[1,10]<-" Tarefa7"
+   tab2[1,11]<-" Avaliação2"
+   tab2[1,12]<-" Média"
+   tab2[1,13]<-" Situação"
+
+   tab3[1,1]<-" Nome             "
+   tab3[1,2]<-" Matrícula"
+   tab3[1,3]<-" Falta"
+   tab3[1,4]<-" Nota1"
+   tab3[1,5]<-" Nota2"
+   tab3[1,6]<-" Trabalho"
+   tab3[1,7]<-" Pesquisa"
+   tab3[1,8]<-" Média1"
+   tab3[1,9]<-" Média2"
+   tab3[1,10]<-" Nota Final"
+   tab3[1,11]<-" Situação"
+   
+   tab4[1,1]<-" Nome             "
+   tab4[1,2]<-" Matrícula"
+   tab4[1,3]<-" Falta"
+   tab4[1,4]<-" Nota1"
+   tab4[1,5]<-" Nota2"
+   tab4[1,6]<-" Nota3"
+   tab4[1,7]<-" Média"
+   tab4[1,8]<-" Situação"
+   
+   tab5[1,1]<-" Nome             "
+   tab5[1,2]<-" Matrícula"
+   tab5[1,3]<-" Falta"
+   tab5[1,4]<-" Prova1"
+   tab5[1,5]<-" Prova2"
+   tab5[1,6]<-" Prova3"
+   tab5[1,7]<-" Prova4"
+   tab5[1,8]<-" Prova5"
+   tab5[1,9]<-" Média"
+   tab5[1,10]<-" Situação"
+
+   tab6[1,1]<-" Nome             "
+   tab6[1,2]<-" Matrícula"
+   tab6[1,3]<-" Falta"
+   tab6[1,4]<-" Nota1"
+   tab6[1,5]<-" Nota2"
+   tab6[1,6]<-" Média"
+   tab6[1,7]<-" Situação"
+
+   //codigo inicio
+   i<-0
+   enquanto i=0 faca
+      escreval("Seja bem vindo ao Gigga!")
+      escreval("O sistema de dados estudantis")
+      escreval("-----------------------------")
+      escreval("----Quem irá fazer login?----")
+      escreval("Para professor digite 0, para aluno digite 1")
+      escreva("->")
+      leia(a)
+      escolha (a)
+      caso 0
+         escreval ("------------Qual professor você é?------------")
+         escreval ("------Digite respectivamente a opção desejada------")
+         escreval("1-Ana Paula, 2-Marcelo, 3-Lucyjane, 4-José, 5-Ana Carolina")
+           escreva("->")
+         leia (b)
+         escolha (b)
+            //caso da ana paula
+         caso 1
+            escreval("Logando como Ana Paula, digite seu código de usuário")
+              escreva("->")
+            leia(c)
+            se c<>prof[1] então
+               escreval("Código de usuário incorreto")
+               escreval("Tente novamente você tem mais 2 tentativa")
+                 escreva("->")
+               leia(c)
+               se c<>prof[1] entao
+                  escreval("Código de usuário incorreto")
+                  escreval("Tente novamente você tem mais 1 tentativa")
+                    escreva("->")
+                  leia(c)
+                  se c<>prof[1] entao
+                     escreval("Código de usuário incorreto")
+                     escreval("acabaram suas tentativas")
+fimalgoritmo
+fimse
+fimse
+senao
+   escreval("----Bem vindo(a) Ana Paula----")
+fimse
+escreval ("Escolha uma matéria?de 1 a 6 respectivamente")
+escreval ("|Algoritimos e Programação 1|     |Computador e Sociedade|")
+escreval ("|Introdução a Ciência Computação|          |Cálculo 1|")
+escreval ("|Lógica para Ciência da Computação| |Empreendedorismo|")
+  escreva("->")
+leia(m)
+se (m<>1) e (m<>2) então
+   repita
+      escreval("Você não tem acesso a essa matéria")
+      escreval("Escolha outra matéria")
+      leia(m)
+   até (m=1) ou (m=2)
+fimse
+nd <- 0
+enquanto nd = 0 faca
+   escolha (m)
+      //AP1<<<<
+   caso 1
+      escreval("Você escolheu ",materia[m])
+      escreval("Você quer editar(0) ou visualizar(1) os dados")
+        escreva("->")
+      leia(d)
+      enquanto (d<>0) e (d<>1) faca
+         escreval("opção inválida tente novamente")
+           escreva("->")
+         leia(d)
+      fimenquanto
+      escolha d
+      caso 0
+         //editar  ap1
+         escreval ("Alterando dados")
+         escreval ("Digite a matrícula do aluno que deseja alterar os dados:")
+           escreva("->")
+         leia (edit)
+         para k de 2 ate 60 faca
+            se (edit = mafal1[k,2]) entao
+               p<-0
+               interrompa
+            senao
+               p<- 1
+            fimse
+         fimpara
+         se p = 1 entao
+            escreval ("matrícula não existe")
+fimalgoritmo
+fimse
+escreval("Editando dados do aluno: ",nome1[k,1])
+escreval ("Digite os novos valores a serem alterados:")
+escreval ("Alterando falta:")
+  escreva("->")
+leia (mafal1[k,3])
+escreval ("Alterando nota1:")
+  escreva("->")
+leia (dados1[k,4])
+escreval ("Alterando nota2:")
+  escreva("->")
+leia (dados1[k,5])
+escreval ("Alterando trabalho:")
+  escreva("->")
+leia (dados1[k,6])
+//media ap1
+dados1[k,7]<-(0.9*(dados1[k,4]+(dados1[k,5]*2)+dados1[k,6])/4)
+se dados1[k,7]>=6 entao
+aprov1[k,8]<-" Aprovado"
+senao
+aprov1[k,8]<-" Reprovado"
+fimse
+//visualisar ap1
+caso 1
+   escreval ("Mostrando dados de AP1")
+   para x de 1 ate 60 faca
+      escreval
+      para y de 1 ate 8 faca
+         se x=1 entao
+            escreva(tab1[x,y])
+         senao
+            se y=1 entao
+               escreva(nome1[x,y])
+            fimse
+            se ((y=2) ou (y=3)) entao
+               escreva(mafal1[x,y])
+            fimse
+            se ((y=4) ou (y=5) ou (y=6) ou (y=7)) entao
+               escreva(dados1[x,y])
+            fimse
+            se y=8 entao
+               escreva (aprov1[x,y])
+            fimse
+         fimse
+      fimpara
+   fimpara
+fimescolha
+escreval
+escreval("Você gostaria de fazer mais algo (0)contiua (1)fechar o progama")
+  escreva("->")
+leia(nd)
+se nd=1 entao
+fimse
+se ((nd<0) ou (nd>1)) entao
+   escreval("valor inválido")
+fimalgoritmo
+fimse
+
+caso 2
+   // Comp. e sociedade
+   escreval("Você escolheu ",materia[m])
+   escreval("Você quer editar(0) ou visualizar(1) os dados")
+     escreva("->")
+   leia(d)
+   enquanto (d<>0) e (d<>1) faca
+      escreval("opção inválida tente novamente")
+        escreva("->")
+      leia(d)
+   fimenquanto
+   escolha d
+   caso 0
+      //editar  CS
+      escreval ("Alterando dados")
+      escreval ("Digite a matrícula do aluno que deseja alterar os dados:")
+        escreva("->")
+      leia (edit)
+      para k de 2 ate 60 faca
+         se (edit = mafal2[k,2]) entao
+            p<-0
+            interrompa
+         senao
+            p<- 1
+         fimse
+      fimpara
+      se p = 1 entao
+         escreval ("matrícula não existe")
+fimalgoritmo
+fimse
+escreval("Editando dados do aluno: ",nome2[k,1])
+escreval ("Digite os novos valores a serem alterados:")
+escreval ("Alterando falta:")
+  escreva("->")
+leia (mafal2[k,3])
+escreval ("Alterando tarefa1:")
+  escreva("->")
+leia (dados2[k,4])
+escreval ("Alterando tarefa2:")
+  escreva("->")
+leia (dados2[k,5])
+escreval ("Alterando tarefa3:")
+  escreva("->")
+leia (dados2[k,6])
+escreval ("Alterando tarefa4:")
+  escreva("->")
+leia (dados2[k,7])
+escreval ("Alterando tarefa5:")
+  escreva("->")
+leia (dados2[k,8])
+escreval ("Alterando tarefa6:")
+  escreva("->")
+leia (dados2[k,9])
+escreval ("Alterando tarefa7:")
+  escreva("->")
+leia (dados2[k,10])
+escreval ("Alterando tarefa8:")
+  escreva("->")
+leia (dados2[k,11])
+dados2[k,12]<-((0.2*(dados2[k,4]+dados2[k,5]+dados2[k,6]+dados2[k,8]+dados2[k,9]+dados2[k,10])/6)+0.8*(dados2[k,7]+dados2[k,11])/2)
+se dados2[k,12]>=6 entao
+aprov2[k,13]<- " Aprovado"
+senao
+aprov2[k,13]<-" Reprovado"
+fimse
+//visualisar CS
+caso 1
+   escreval ("Mostrando dados de AP1")
+   para x de 1 ate 60 faca
+      escreval
+      para y de 1 ate 13 faca
+         se x=1 entao
+            escreva(tab2[x,y])
+         senao
+            se y=1 entao
+               escreva(nome2[x,y])
+            fimse
+            se ((y=2) ou (y=3)) entao
+               escreva(mafal2[x,y])
+            fimse
+            se ((y=4) ou (y=5) ou (y=6) ou (y=7) OU (Y=8) ou (y=9) ou (y=10) ou (y=11) ou (y=12)) entao
+               escreva(dados2[x,y])
+            fimse
+            se y=13 entao
+               escreva (aprov2[x,y])
+            fimse
+
+         fimse
+      fimpara
+   fimpara
+fimescolha
+escreval
+escreval("Você gostaria de fazer mais algo (0)contiua (1)fechar o progama")
+  escreva("->")
+leia(nd)
+se nd=1 entao
+fimse
+se ((nd<0) ou (nd>1)) entao
+   escreval("valor inválido")
+fimalgoritmo
+fimse
+//
+fimescolha
+fimenquanto
+//caso marcelo
+caso 2
+   escreval("Logando como Marcelo, digite seu código de usuário")
+     escreva("->")
+   leia(c)
+   se c<>prof[2] então
+      escreval("Código de usuário incorreto")
+      escreval("Tente novamente você tem mais 2 tentativa")
+        escreva("->")
+      leia(c)
+      se c<>prof[2] entao
+         escreval("Código de usuário incorreto")
+         escreval("Tente novamente você tem mais 1 tentativa")
+           escreva("->")
+         leia(c)
+         se c<>prof[2] entao
+            escreval("Código de usuário incorreto")
+            escreval("acabaram suas tentativas")
+fimalgoritmo
+fimse
+fimse
+senao
+   escreval("----Bem vindo(a) Marcelo----")
+fimse
+escreval ("Escolha uma matéria?de 1 a 6 respectivamente")
+escreval ("|Algoritimos e Programação 1|     |Computador e Sociedade|")
+escreval ("|Introdução a Ciência Computação|          |Cálculo 1|")
+escreval ("|Lógica para Ciência da Computação| |Empreendedorismo|")
+  escreva("->")
+leia(m)
+se m<>3 entao
+   repita
+      escreval("Você não tem acesso a essa matéria")
+      escreval("Escolha outra matéria")
+        escreva("->")
+      leia(m)
+   até (m=3)
+fimse
+//ICC
+nd <- 0
+enquanto nd = 0 faca
+   escreval("Você escolheu ",materia[m])
+   escreval("Você quer editar(0) ou visualizar(1) os dados")
+     escreva("->")
+   leia(d)
+   enquanto (d<>0) e (d<>1) faca
+      escreval("opção inválida tente novamente")
+        escreva("->")
+      leia(d)
+   fimenquanto
+   escolha d
+   caso 0
+      //editar  ICC
+      escreval ("Alterando dados")
+      escreval ("Digite a matrícula do aluno que deseja alterar os dados:")
+        escreva("->")
+      leia (edit)
+      para k de 2 ate 60 faca
+         se (edit = mafal3[k,2]) entao
+            p<-0
+            interrompa
+         senao
+            p<- 1
+         fimse
+      fimpara
+      se p = 1 entao
+         escreval ("matrícula não existe")
+fimalgoritmo
+fimse
+escreval("Editando dados do aluno: ",nome3[k,1])
+escreval ("Digite os novos valores a serem alterados:")
+escreval ("Alterando falta:")
+  escreva("->")
+leia (mafal3[k,3])
+escreval ("Alterando nota1:")
+  escreva("->")
+leia (dados3[k,4])
+escreval ("Alterando nota2:")
+  escreva("->")
+leia (dados3[k,5])
+escreval ("Alterando trabalho:")
+  escreva("->")
+leia (dados3[k,6])
+escreval ("Alterando pesquisa:")
+  escreva("->")
+leia (dados3[k,7])
+dados3[k,8] <- (dados3[k,4] + dados3[k,5])/2
+dados3[k,9]<-dados3[k,6]*0.7 + dados3[k,7]*0.3
+dados3[k,10] <- (dados3[k,8] + dados3[k,9])/2
+se dados3[k,10]>=6 entao
+aprov3[k,11]<- " Aprovado"
+senao
+aprov3[k,11]<- " Reprovado"
+fimse
+
+//visualisar ICC
+caso 1
+   escreval ("Mostrando dados de ICC")
+   para x de 1 ate 60 faca
+      escreval
+      para y de 1 ate 11 faca
+         se x=1 entao
+            escreva(tab3[x,y])
+         senao
+            se y=1 entao
+               escreva(nome3[x,y])
+            fimse
+            se ((y=2) ou (y=3)) entao
+               escreva(mafal3[x,y])
+            fimse
+            se ((y=4) ou (y=5) ou (y=6) ou (y=7) ou (y=8) ou (y=9) ou (y=10)) entao
+               escreva(dados3[x,y])
+            fimse
+            se y=11 entao
+               escreva (aprov3[x,y])
+            fimse
+
+         fimse
+      fimpara
+   fimpara
+fimescolha
+escreval
+escreval("Você gostaria de fazer mais algo (0)contiua (1)fechar o progama")
+  escreva("->")
+leia(nd)
+se nd=1 entao
+fimse
+se ((nd<0) ou (nd>1)) entao
+   escreval("valor inválido")
+fimalgoritmo
+fimse
+fimenquanto
+//caso lucyjane
+caso 3
+   escreval("Logando como Lucyjane, digite seu código de usuário")
+     escreva("->")
+   leia(c)
+   se c<>prof[3] então
+      escreval("Código de usuário incorreto")
+      escreval("Tente novamente você tem mais 2 tentativa")
+      leia(c)
+      se c<>prof[3] entao
+         escreval("Código de usuário incorreto")
+         escreval("Tente novamente você tem mais 1 tentativa")
+         leia(c)
+         se c<>prof[3] entao
+            escreval("Código de usuário incorreto")
+            escreval("acabaram suas tentativas")
+fimalgoritmo
+fimse
+fimse
+senao
+   escreval("----Bem vindo(a) Lucyjane----")
+fimse
+escreval ("Escolha uma matéria?de 1 a 6 respectivamente")
+escreval ("|Algoritimos e Programação 1|     |Computador e Sociedade|")
+escreval ("|Introdução a Ciência Computação|          |Cálculo 1|")
+escreval ("|Lógica para Ciência da Computação| |Empreendedorismo|")
+  escreva("->")
+leia(m)
+se m<>4 entao
+   repita
+      escreval("Você não tem acesso a essa matéria")
+      escreval("Escolha outra matéria")
+        escreva("->")
+      leia(m)
+   até (m=4)
+fimse
+//calculo
+nd <- 0
+enquanto nd = 0 faca
+   escreval("Você escolheu ",materia[m])
+   escreval("Você quer editar(0) ou visualizar(1) os dados")
+     escreva("->")
+   leia(d)
+   enquanto (d<>0) e (d<>1) faca
+      escreval("opção inválida tente novamente")
+        escreva("->")
+      leia(d)
+   fimenquanto
+   escolha d
+   caso 0
+      //editar  calculo
+      escreval ("Alterando dados")
+      escreval ("Digite a matrícula do aluno que deseja alterar os dados:")
+        escreva("->")
+      leia (edit)
+      para k de 2 ate 60 faca
+         se (edit = mafal4[k,2]) entao
+            p<-0
+            interrompa
+         senao
+            p<- 1
+         fimse
+      fimpara
+      se p = 1 entao
+         escreval ("matrícula não existe")
+fimalgoritmo
+fimse
+escreval("Editando dados do aluno: ",nome4[k,1])
+escreval ("Digite os novos valores a serem alterados:")
+escreval ("Alterando falta:")
+  escreva("->")
+leia (mafal4[k,3])
+escreval ("Alterando lista e prova 1:")
+  escreva("->")
+leia (dados4[k,4])
+escreval ("Alterando lista e prova 2:")
+  escreva("->")
+leia (dados4[k,5])
+escreval ("Alterando lista e prova 3:")
+  escreva("->")
+leia (dados4[k,6])
+dados4[k,7]<-(dados4[k,4]+dados4[k,5]+dados4[k,6])/3
+se dados4[k,7]>=6 entao
+aprov4[k,8]<-" Aprovado"
+senao
+aprov4[k,8]<-" Reprovado"
+fimse
+//visualisar calculo
+caso 1
+   escreval ("Mostrando dados de Cálculo")
+   para x de 1 ate 60 faca
+      escreval
+      para y de 1 ate 8 faca
+         se x=1 entao
+            escreva(tab4[x,y])
+         senao
+            se y=1 entao
+               escreva(nome4[x,y])
+            fimse
+            se ((y=2) ou (y=3)) entao
+               escreva(mafal4[x,y])
+            fimse
+            se ((y=4) ou (y=5) ou (y=6) ou (y=7)) entao
+               escreva(dados4[x,y])
+            fimse
+            se y=8 entao
+               escreva (aprov4[x,y])
+            fimse
+
+         fimse
+      fimpara
+   fimpara
+fimescolha
+escreval
+escreval("Você gostaria de fazer mais algo (0)contiua (1)fechar o progama")
+  escreva("->")
+leia(nd)
+se nd=1 entao
+fimse
+se ((nd<0) ou (nd>1)) entao
+   escreval("valor inválido")
+fimalgoritmo
+fimse
+fimenquanto
+//caso jose
+caso 4
+   escreval("Logando como José, digite seu código de usuário")
+     escreva("->")
+   leia(c)
+   se c<>prof[4] então
+      escreval("Código de usuário incorreto")
+      escreval("Tente novamente você tem mais 2 tentativa")
+        escreva("->")
+      leia(c)
+      se c<>prof[4] entao
+         escreval("Código de usuário incorreto")
+         escreval("Tente novamente você tem mais 1 tentativa")
+           escreva("->")
+         leia(c)
+         se c<>prof[4] entao
+            escreval("Código de usuário incorreto")
+            escreval("acabaram suas tentativas")
+fimalgoritmo
+fimse
+fimse
+senao
+   escreval("------Bem vindo(a) José------")
+fimse
+escreval ("Escolha uma matéria?de 1 a 6 respectivamente")
+escreval ("|Algoritimos e Programação 1|     |Computador e Sociedade|")
+escreval ("|Introdução a Ciência Computação|          |Cálculo 1|")
+escreval ("|Lógica para Ciência da Computação| |Empreendedorismo|")
+  escreva("->")
+leia(m)
+se m<>5 entao
+   repita
+      escreval("Você não tem acesso a essa matéria")
+      escreval("Escolha outra matéria")
+        escreva("->")
+      leia(m)
+   até (m=5)
+fimse
+nd <- 0
+enquanto nd = 0 faca
+   //lcc
+   escreval("Você escolheu ",materia[m])
+   escreval("Você quer editar(0) ou visualizar(1) os dados")
+     escreva("->")
+   leia(d)
+   enquanto (d<>0) e (d<>1) faca
+      escreval("opção invalida tente novamente")
+        escreva("->")
+      leia(d)
+   fimenquanto
+   escolha d
+   caso 0
+      //editar  LCC
+      escreval ("Alterando dados")
+      escreval ("Digite a matrícula do aluno que deseja alterar os dados:")
+        escreva("->")
+      leia (edit)
+      para k de 2 ate 60 faca
+         se (edit = mafal5[k,2]) entao
+            p<-0
+            interrompa
+         senao
+            p<- 1
+         fimse
+      fimpara
+      se p = 1 entao
+         escreval ("matrícula não existe")
+fimalgoritmo
+fimse
+escreval("Editando dados do aluno: ",nome5[k,1])
+escreval ("Digite os novos valores a serem alterados:")
+escreval ("Alterando falta:")
+  escreva("->")
+leia (mafal5[k,3])
+escreval ("Alterando prova 1:")
+  escreva("->")
+leia (dados5[k,4])
+escreval ("Alterando prova 2:")
+  escreva("->")
+leia (dados5[k,5])
+escreval ("Alterando prova 3:")
+  escreva("->")
+leia (dados5[k,6])
+escreval ("Alterando prova 4:")
+  escreva("->")
+leia (dados5[k,7])
+escreval ("Alterando prova 5:")
+  escreva("->")
+leia (dados5[k,8])
+dados5[k,9]<- dados5[k,4]+dados5[k,5]+dados5[k,6]+dados5[k,7]+dados5[k,8]
+se dados5[k,9]>=6 entao
+aprov5[k,10]<- " Aprovado"
+senao
+aprov5[k,10]<- " Reprovado"
+fimse
+
+//visualisar LCC
+caso 1
+   escreval ("Mostrando dados de LCC")
+   para x de 1 ate 60 faca
+      escreval
+      para y de 1 ate 10 faca
+         se x=1 entao
+            escreva(tab5[x,y])
+         senao
+            se y=1 entao
+               escreva(nome5[x,y])
+            fimse
+            se ((y=2) ou (y=3)) entao
+               escreva(mafal5[x,y])
+            fimse
+            se ((y=4) ou (y=5) ou (y=6) ou (y=7) ou (y=8) ou (y=9)) entao
+               escreva(dados5[x,y])
+            fimse
+            se y=10 entao
+               escreva (aprov5[x,y])
+            fimse
+         fimse
+      fimpara
+   fimpara
+fimescolha
+escreval
+escreval("Você gostaria de fazer mais algo (0)contiua (1)fechar o progama")
+  escreva("->")
+leia(nd)
+se nd=1 entao
+fimse
+se ((nd<0) ou (nd>1)) entao
+   escreval("valor inválido")
+fimalgoritmo
+fimse
+fimenquanto
+//caso ana carolina
+caso 5
+   escreval("Logando como Ana Carolina, digite seu código de usuário")
+     escreva("->")
+   leia(c)
+   se c<>prof[5] então
+      escreval("Código de usuário incorreto")
+      escreval("Tente novamente você tem mais 2 tentativa")
+        escreva("->")
+      leia(c)
+      se c<>prof[5] entao
+         escreval("Código de usuário incorreto")
+         escreval("Tente novamente você tem mais 1 tentativa")
+           escreva("->")
+         leia(c)
+         se c<>prof[5] entao
+            escreval("Código de usuário incorreto")
+            escreval("acabaram suas tentativas")
+fimalgoritmo
+fimse
+fimse
+senao
+   escreval("----Bem vindo(a) Ana Carolina----")
+fimse
+escreval ("Escolha uma matéria?de 1 a 6 respectivamente")
+escreval ("|Algoritimos e Programação 1|     |Computador e Sociedade|")
+escreval ("|Introdução a Ciência Computação|          |Cálculo 1|")
+escreval ("|Lógica para Ciência da Computação| |Empreendedorismo|")
+  escreva("->")
+leia(m)
+se m<>6 entao
+   repita
+      escreval("Você não tem acesso a essa matéria")
+      escreval("Escolha outra matéria")
+        escreva("->")
+      leia(m)
+   até (m=6)
+fimse
+nd <- 0
+enquanto nd = 0 faca
+   //empreendedorismo
+   escreval("Você escolheu ",materia[m])
+   escreval("Você quer editar(0) ou visualizar(1) os dados")
+     escreva("->")
+   leia(d)
+   enquanto (d<>0) e (d<>1) faca
+      escreval("opção inválida tente novamente")
+        escreva("->")
+      leia(d)
+   fimenquanto
+   escolha d
+   caso 0
+      //editar empreendedorismo
+      escreval ("Alterando dados")
+      escreval ("Digite a matrícula do aluno que deseja alterar os dados:")
+        escreva("->")
+      leia (edit)
+      para k de 2 ate 60 faca
+         se (edit = mafal6[k,2]) entao
+            p<-0
+            interrompa
+         senao
+            p<- 1
+         fimse
+      fimpara
+      se p = 1 entao
+         escreval ("matrícula não existe")
+fimalgoritmo
+fimse
+escreval("Editando dados do aluno: ",nome6[k,1])
+escreval ("Digite os novos valores a serem alterados:")
+escreval ("Alterando falta:")
+  escreva("->")
+leia (mafal6[k,3])
+escreval ("Alterando nota 1:")
+  escreva("->")
+leia (dados6[k,4])
+escreval ("Alterando nota 2:")
+  escreva("->")
+leia (dados6[k,5])
+dados6[k,6]<- (dados6[k,4]+dados6[k,5])/2
+se dados6[k,6]>=6 entao
+aprov6[k,7]<- " Aprovado"
+senao
+aprov6[k,7]<- " Reprovado"
+fimse
+
+//visualisar empreendedorismo
+caso 1
+   escreval ("Mostrando dados de empreendedorismo")
+   para x de 1 ate 60 faca
+      escreval
+      para y de 1 ate 7 faca
+         se x=1 entao
+            escreva(tab6[x,y])
+         senao
+            se y=1 entao
+               escreva(nome6[x,y])
+            fimse
+            se ((y=2) ou (y=3)) entao
+               escreva(mafal6[x,y])
+            fimse
+            se ((y=4) ou (y=5) ou (y=6)) entao
+               escreva(dados6[x,y])
+            fimse
+            se y=7 entao
+               escreva (aprov6[x,y])
+            fimse
+
+         fimse
+      fimpara
+   fimpara
+fimescolha
+//FIM CASO DAS MATERIAS COMO PROFESSOR
+escreval
+escreval("Você gostaria de fazer mais algo (0)contiua (1)fechar o progama")
+  escreva("->")
+leia(nd)
+se nd=1 entao
+fimse
+se ((nd<0) ou (nd>1)) entao
+   escreval("valor inválido")
+fimalgoritmo
+fimse
+fimenquanto
+fimescolha
+
+//caso ALUNOS <<<<<<<
+// DADOS AP1
+caso 1
+   escreval ("Escolha a materia que deseja visualizar seus dados:")
+   escreval ("De 1 a 6 respectivamente...")
+   escreval ("|Algoritimos e Progamação 1|     |Computador e Sociedade|")
+   escreval ("|Introdução a Ciência Computação|          |Cálculo 1|")
+   escreval ("|Lógica para Ciência da Computação| |Empreendedorismo|")
+     escreva("->")
+   leia (matAl)
+   escolha (matAl)
+   caso 1
+    escreval("Algoritimos e Programação 1 selecionado")
+      escreval ("Digite a sua matricula")
+        escreva("->")
+      leia (edit)
+      para k de 2 ate 60 faca
+         se (edit = mafal1[k,2]) entao
+            p<-0
+            interrompa
+         senao
+            p<- 1
+         fimse
+      fimpara
+      se p = 1 entao
+         escreval ("matrícula não existe")
+fimalgoritmo
+fimse
+escreval("Logando como: ",nome1[k,1])
+escreval ("Mostrando dados de AP1")
+para la de 1 ate 8 faca
+   escreva(tab1[1,la])
+fimpara
+escreval
+para la de 1 ate 8 faca
+   se la=1 entao
+      escreva(nome1[k,la])
+   fimse
+   se ((la=2) ou (la=3)) entao
+      escreva(mafal1[k,la])
+   fimse
+   se ((la=4) ou (la=5) ou (la=6) ou (la=7)) entao
+      escreva(dados1[k,la])
+   fimse
+   se la=8 entao
+      escreva (aprov1[k,la])
+   fimse
+fimpara
+// DADOS CS
+caso 2
+ escreval("Computador e Sociedade selecionado")
+   escreval ("Digite a sua matricula")
+     escreva("->")
+   leia (edit)
+   para k de 2 ate 60 faca
+      se (edit = mafal2[k,2]) entao
+         p<-0
+         interrompa
+      senao
+         p<- 1
+      fimse
+   fimpara
+   se p = 1 entao
+      escreval ("matrícula não existe")
+fimalgoritmo
+fimse
+escreval("Logando como: ",nome2[k,1])
+escreval ("Mostrando dados de Computador e Sociedade")
+para la de 1 ate 13 faca
+   escreva(tab2[1,la])
+fimpara
+escreval
+para la de 1 ate 13 faca
+   se la=1 entao
+      escreva(nome2[k,la])
+   fimse
+   se ((la=2) ou (la=3)) entao
+      escreva(mafal2[k,la])
+   fimse
+   se ((la=4) ou (la=5) ou (la=6) ou (la=7) OU (la=8) ou (la=9) ou (la=10) ou (la=11) ou (la=12)) entao
+      escreva(dados2[k,la])
+   fimse
+   se la=13 entao
+      escreva (aprov2[k,la])
+   fimse
+fimpara
+// DADOS ICC
+caso 3
+escreval("Introdução a Ciência da Computação selecionado")
+   escreval ("Digite a sua matrícula")
+     escreva("->")
+   leia (edit)
+   para k de 2 ate 60 faca
+      se (edit = mafal3[k,2]) entao
+         p<-0
+         interrompa
+      senao
+         p<- 1
+      fimse
+   fimpara
+   se p = 1 entao
+      escreval ("matrícula não existe")
+fimalgoritmo
+fimse
+escreval("Logando como: ",nome3[k,1])
+escreval ("Mostrando dados de Introdução a Ciência da Computação")
+para la de 1 ate 11 faca
+   escreva(tab3[1,la])
+fimpara
+escreval
+para la de 1 ate 11 faca
+   se la=1 entao
+      escreva(nome3[k,la])
+   fimse
+   se ((la=2) ou (la=3)) entao
+      escreva(mafal3[k,la])
+   fimse
+   se ((la=4) ou (la=5) ou (la=6) ou (la=7) ou (la=8) ou (la=9) ou (la=10)) entao
+      escreva(dados3[k,la])
+   fimse
+   se la=11 entao
+      escreva(aprov3[k,la])
+   fimse
+fimpara
+//DADOS CALCULO
+caso 4
+escreval("Cálculo 1 selecionado")
+   escreval ("Digite a sua matrícula")
+     escreva("->")
+   leia (edit)
+   para k de 2 ate 60 faca
+      se (edit = mafal4[k,2]) entao
+         p<-0
+         interrompa
+      senao
+         p<- 1
+      fimse
+   fimpara
+   se p = 1 entao
+      escreval ("matrícula não existe")
+fimalgoritmo
+fimse
+escreval("Logando como: ",nome4[k,1])
+escreval ("Mostrando dados de Cálculo")
+para la de 1 ate 8 faca
+   escreva(tab4[1,la])
+fimpara
+escreval
+para la de 1 ate 8 faca
+   se la=1 entao
+      escreva(nome4[k,la])
+   fimse
+   se ((la=2) ou (la=3)) entao
+      escreva(mafal4[k,la])
+   fimse
+   se ((la=4) ou (la=5) ou (la=6) ou (la=7)) entao
+      escreva(dados4[k,la])
+   fimse
+   se la=8 entao
+      escreva (aprov4[k,la])
+   fimse
+fimpara
+//DADOS LCC
+caso 5
+escreval("Lógica para Ciência da Computação selecionado")
+   escreval ("Digite a sua matrícula")
+     escreva("->")
+   leia (edit)
+   para k de 2 ate 60 faca
+      se (edit = mafal5[k,2]) entao
+         p<-0
+         interrompa
+      senao
+         p<- 1
+      fimse
+   fimpara
+   se p = 1 entao
+      escreval ("matrícula não existe")
+fimalgoritmo
+fimse
+escreval("Logando como: ",nome5[k,1])
+escreval ("Mostrando dados de Lógica da Ciência da Computação")
+para la de 1 ate 10 faca
+   escreva (tab5[1,la])
+fimpara
+escreval
+para la de 1 ate 10 faca
+   se la=1 entao
+      escreva(nome5[k,la])
+   fimse
+   se ((la=2) ou (la=3)) entao
+      escreva(mafal5[k,la])
+   fimse
+   se ((la=4) ou (la=5) ou (la=6) ou (la=7) ou (la=8) ou (la=9)) entao
+      escreva(dados5[k,la])
+   fimse
+   se la=10 entao
+      escreva (aprov5[k,la])
+   fimse
+fimpara
+//DADOS EMPREENDEDORISMO
+caso 6
+escreval("Empreendedorismo selecionado")
+   escreval ("Digite a sua matrícula")
+     escreva("->")
+   leia (edit)
+   para k de 2 ate 60 faca
+      se (edit = mafal5[k,2]) entao
+         p<-0
+         interrompa
+      senao
+         p<- 1
+      fimse
+   fimpara
+   se p = 1 entao
+      escreval ("matrícula não existe")
+fimalgoritmo
+fimse
+   escreval("Logando como: ",nome6[k,1])
+   escreval ("Mostrando dados de Empreendedorismo")
+   para la de 1 ate 7 faca
+      escreva (tab6[1,la])
+   fimpara
+   escreval
+   para la de 1 ate 7 faca
+      se la=1 entao
+         escreva(nome6[k,la])
+      fimse
+      se ((la=2) ou (la=3)) entao
+         escreva(mafal6[k,la])
+      fimse
+      se ((la=4) ou (la=5) ou (la=6)) entao
+         escreva(dados6[k,la])
+      fimse
+      se la=7 entao
+         escreva (aprov6[k,la])
+      fimse
+   fimpara
+outrocaso
+escreval ("-----Essa opção não existe-----")
+fimalgoritmo
+fimescolha
+//fim caso materias dos alunos
+
+outrocaso
+   escreval ("Número inválido")
+   //fim caso aluno ou prof
+fimescolha
+escreval
+escreval("Você gostaria de fechar e logar como outra pessoa? (0)sim (1)não")
+leia(i)
+se ((i<>0)e(i<>1)) entao
+   enquanto ((i<>0)e(i<>1)) faca
+      escreval("Valor inválido, por favor coloque um valor válido")
+      leia(i)
+   fimenquanto
+fimse
+fimenquanto
+
+
+Fimalgoritmo
